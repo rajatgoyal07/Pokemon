@@ -3,7 +3,7 @@ name: Deploy Pokemon App
 on:
   push:
     branches:
-      - main  # Deploys whenever you push to main
+      - main
 
 jobs:
   deploy:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18  # Ensure this matches your project version
+          node-version: 22
 
       - name: Install Dependencies
         run: npm install
@@ -28,4 +28,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist  # Vite output directory
+          folder: dist
+          token: ${{ secrets.GH_PAT }}
