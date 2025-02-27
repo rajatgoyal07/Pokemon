@@ -16,10 +16,10 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <nav className="main-nav">
-        <Link to="/" onClick={handleHomeClick}>Home</Link> | <Link to="/favorites">Favorites</Link>
+        <Link to="/Pokemon/" onClick={handleHomeClick}>Home</Link> | <Link to="/favorites">Favorites</Link>
       </nav>
       <Routes>
-        <Route path="/" element={<HomePage key={homeKey} />} />
+        <Route path="/Pokemon/" element={<HomePage key={homeKey} />} />
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
     </Router>
